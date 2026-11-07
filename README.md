@@ -48,3 +48,10 @@ js/data.js      default categories and products
 js/icons.js     inline SVG product illustrations
 js/app.js       all behaviour (catalogue, cart, manage panel, storage)
 ```
+
+## Publishing (GitHub Pages)
+
+`.github/workflows/pages.yml` publishes the site on every push to `main`.
+One-time setup: **Settings → Pages → Build and deployment → Source: GitHub Actions**,
+then re-run the workflow from the **Actions** tab (or push any change).
+The site appears at `https://sajed0x.github.io/privat/`.
