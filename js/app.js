@@ -1,16 +1,16 @@
-/* Medica Supply — storefront logic. Everything persists in localStorage. */
+/* Unimed — storefront logic. Everything persists in localStorage. */
 (function () {
   "use strict";
 
   /* ---------------- Storage ---------------- */
   const KEYS = {
-    products: "medica.products.v1",
-    categories: "medica.categories.v1",
-    cart: "medica.cart.v1",
-    favs: "medica.favs.v1",
-    quotes: "medica.quotes.v1",
-    prefs: "medica.prefs.v1",
-    theme: "medica.theme",
+    products: "unimed.products.v1",
+    categories: "unimed.categories.v1",
+    cart: "unimed.cart.v1",
+    favs: "unimed.favs.v1",
+    quotes: "unimed.quotes.v1",
+    prefs: "unimed.prefs.v1",
+    theme: "unimed.theme",
   };
   const clone = (v) => JSON.parse(JSON.stringify(v));
   function load(key, fallback) {
@@ -775,11 +775,11 @@
 
   /* ---------------- Manage: backup ---------------- */
   $("#exportBtn").addEventListener("click", () => {
-    const data = { app: "medica-supply", version: 1, exportedAt: new Date().toISOString(), products: state.products, categories: state.categories, quotes: state.quotes };
+    const data = { app: "unimed", version: 1, exportedAt: new Date().toISOString(), products: state.products, categories: state.categories, quotes: state.quotes };
     const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
     const a = document.createElement("a");
     a.href = URL.createObjectURL(blob);
-    a.download = `medica-backup-${new Date().toISOString().slice(0, 10)}.json`;
+    a.download = `unimed-backup-${new Date().toISOString().slice(0, 10)}.json`;
     document.body.appendChild(a); a.click(); a.remove();
     setTimeout(() => URL.revokeObjectURL(a.href), 1000);
     toast("Backup downloaded");
@@ -799,7 +799,7 @@
       renderAll(); renderProductTable(); renderCategories(); renderQuotes();
       toast(`Imported ${valid.length} products`);
     } catch (err) {
-      toast("That file isn't a valid Medica backup");
+      toast("That file isn't a valid Unimed backup");
     }
   });
   $("#resetBtn").addEventListener("click", () => {

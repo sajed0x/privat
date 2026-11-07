@@ -1,4 +1,4 @@
-# Medica Supply
+# Unimed
 
 A modern storefront for laboratory and medical products: test tubes, glassware,
 PPE, diagnostics and more. Plain HTML, CSS and JavaScript, with no build step and
@@ -36,7 +36,7 @@ Pricing rules (discount tiers, shipping) are at the top of `js/app.js`.
 ## Where data is stored
 
 `localStorage` in the browser that opened the site, under keys starting with
-`medica.`. It stays across reloads and restarts, but it is per browser and per
+`unimed.`. It stays across reloads and restarts, but it is per browser and per
 device. Use **Manage › Backup** to move or keep a copy.
 
 ## Files
