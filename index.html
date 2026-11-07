@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Medica Supply</title>
+  <meta name="description" content="Laboratory and medical supplies: test tubes, glassware, PPE, diagnostics and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%230f766e'/%3E%3Cpath d='M13 7h6v7h7v6h-7v7h-6v-7H6v-6h7z' fill='white'/%3E%3C/svg%3E" />
+  <script>
+    // Apply the saved theme before first paint to avoid a flash.
+    try { const t = localStorage.getItem("medica.theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#catalog">Skip to products</a>
+
+  <header class="topbar" id="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="#top" aria-label="Medica Supply home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32"><path d="M13 7h6v7h7v6h-7v7h-6v-7H6v-6h7z" fill="currentColor"/></svg>
+        </span>
+        <span class="brand-name">Medica<span>Supply</span></span>
+      </a>
+
+      <label class="search" for="search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="search" type="search" placeholder="Search tubes, gloves, SKU…" autocomplete="off" />
+        <kbd>/</kbd>
+      </label>
+
+      <nav class="actions" aria-label="Shop">
+        <button class="icon-btn" id="themeBtn" type="button" aria-label="Toggle dark mode" title="Theme">
+          <svg class="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+        <button class="icon-btn" id="favBtn" type="button" aria-label="Saved items" title="Saved">
+          <svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.5-9.3C1 8 3.4 4.5 7 4.5c2 0 3.6 1.1 5 2.8 1.4-1.7 3-2.8 5-2.8 3.6 0 6 3.5 4.5 7.2C19.5 16.4 12 21 12 21z"/></svg>
+          <span class="count" id="favCount" hidden>0</span>
+        </button>
+        <button class="icon-btn" id="cartBtn" type="button" aria-label="Open cart" title="Cart">
+          <svg viewBox="0 0 24 24"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2"/><circle cx="10" cy="20.5" r="1.3"/><circle cx="17" cy="20.5" r="1.3"/></svg>
+          <span class="count" id="cartCount" hidden>0</span>
+        </button>
+        <button class="btn btn-ghost manage-btn" id="manageBtn" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>
+          <span>Manage</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="wrap hero-inner">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span class="dot"></span> Certified lab &amp; clinical supplies</p>
+          <h1>Precision supplies for <em>labs and clinics</em> that can't wait.</h1>
+          <p class="lede">Test tubes, glassware, PPE and diagnostics, sourced to clinical standards. Prices drop automatically when you order in bulk.</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#catalog">Browse catalogue
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <button class="btn btn-soft" type="button" id="heroQuote">Request a quote</button>
+          </div>
+          <dl class="stats">
+            <div><dt>Products</dt><dd data-count="products">0</dd></div>
+            <div><dt>Categories</dt><dd data-count="categories">0</dd></div>
+            <div><dt>Units in stock</dt><dd data-count="units">0</dd></div>
+          </dl>
+        </div>
+        <div class="hero-art reveal" aria-hidden="true">
+          <div class="orb"></div>
+          <div class="float-card fc-1"><div class="fc-art" data-art="tube" data-color="#3b82f6"></div><div><b>Test Tubes</b><small>from $0.25 / pc</small></div></div>
+          <div class="float-card fc-2"><div class="fc-art" data-art="flask" data-color="#8b5cf6"></div><div><b>Glassware</b><small>Borosilicate 3.3</small></div></div>
+          <div class="float-card fc-3"><div class="fc-art" data-art="gloves" data-color="#14b8a6"></div><div><b>Nitrile PPE</b><small>Ships in 24h</small></div></div>
+          <div class="hero-tube" data-art="tube" data-color="#0f766e"></div>
+        </div>
+      </div>
+      <div class="wrap trust reveal">
+        <span><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.4 8.3 8 9 4.6-.7 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg> ISO 13485 sourced</span>
+        <span><svg viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="1.8"/><circle cx="17" cy="18" r="1.8"/></svg> Next-day dispatch</span>
+        <span><svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.3-5.7M20 4v5h-5"/></svg> 30-day returns</span>
+        <span><svg viewBox="0 0 24 24"><path d="M7 11V7a5 5 0 0 1 10 0v4"/><rect x="4" y="11" width="16" height="10" rx="2"/></svg> Data stays on your device</span>
+      </div>
+    </section>
+
+    <!-- Catalogue -->
+    <section class="catalog wrap" id="catalog">
+      <div class="section-head">
+        <div>
+          <h2>Catalogue</h2>
+          <p class="muted" id="resultInfo" aria-live="polite"></p>
+        </div>
+        <div class="toolbar">
+          <label class="switch">
+            <input type="checkbox" id="inStockOnly" />
+            <span class="track"><span class="thumb"></span></span>
+            In stock
+          </label>
+          <label class="select">
+            <span class="sr-only">Sort by</span>
+            <select id="sort">
+              <option value="featured">Featured</option>
+              <option value="price-asc">Price: low to high</option>
+              <option value="price-desc">Price: high to low</option>
+              <option value="rating">Top rated</option>
+              <option value="name">Name A–Z</option>
+              <option value="stock">Most in stock</option>
+            </select>
+          </label>
+          <div class="seg" role="group" aria-label="Layout">
+            <button type="button" data-view="grid" aria-pressed="true" title="Grid"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></button>
+            <button type="button" data-view="list" aria-pressed="false" title="List"><svg viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="chips" id="chips" role="tablist" aria-label="Categories"></div>
+
+      <div class="price-filter">
+        <span class="muted">Max price</span>
+        <input type="range" id="maxPrice" min="0" max="400" step="1" value="400" />
+        <output id="maxPriceOut" for="maxPrice">$400</output>
+      </div>
+
+      <div class="grid" id="grid"></div>
+
+      <div class="empty" id="empty" hidden>
+        <div class="empty-art" data-art="petri" data-color="#94a3b8"></div>
+        <h3>No products match</h3>
+        <p class="muted">Try another search or clear the filters.</p>
+        <button class="btn btn-soft" type="button" id="clearFilters">Clear filters</button>
+      </div>
+    </section>
+
+    <!-- Bulk pricing band -->
+    <section class="band wrap reveal">
+      <div class="band-card">
+        <div>
+          <h2>Bulk pricing, applied automatically</h2>
+          <p>Order more, pay less. Discounts are worked out live in your cart.</p>
+        </div>
+        <ol class="tiers" id="tiers"></ol>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div>
+        <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M13 7h6v7h7v6h-7v7h-6v-7H6v-6h7z" fill="currentColor"/></svg></span><span class="brand-name">Medica<span>Supply</span></span></a>
+        <p class="muted">For professional laboratory and clinical use. Your catalogue, cart and quotes are saved in this browser.</p>
+      </div>
+      <p class="muted small">© <span id="year"></span> Medica Supply · Demo storefront</p>
+    </div>
+  </footer>
+
+  <!-- Product detail -->
+  <dialog class="modal" id="productModal" aria-labelledby="pmTitle">
+    <div class="modal-body product-view" id="productView"></div>
+  </dialog>
+
+  <!-- Cart drawer -->
+  <aside class="drawer" id="cartDrawer" aria-labelledby="cartTitle" aria-hidden="true">
+    <div class="drawer-head">
+      <h2 id="cartTitle">Your cart</h2>
+      <button class="icon-btn" type="button" data-close aria-label="Close cart"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </div>
+    <div class="drawer-body" id="cartItems"></div>
+    <div class="drawer-foot" id="cartFoot"></div>
+  </aside>
+
+  <!-- Saved drawer -->
+  <aside class="drawer" id="favDrawer" aria-labelledby="favTitle" aria-hidden="true">
+    <div class="drawer-head">
+      <h2 id="favTitle">Saved items</h2>
+      <button class="icon-btn" type="button" data-close aria-label="Close saved items"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </div>
+    <div class="drawer-body" id="favItems"></div>
+  </aside>
+
+  <div class="scrim" id="scrim" hidden></div>
+
+  <!-- Manage panel -->
+  <dialog class="modal modal-wide" id="manageModal" aria-labelledby="manageTitle">
+    <div class="modal-body">
+      <div class="manage-head">
+        <div>
+          <h2 id="manageTitle">Manage store</h2>
+          <p class="muted">Changes save instantly to this browser.</p>
+        </div>
+        <button class="icon-btn" type="button" data-close aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      </div>
+      <div class="tabs" role="tablist">
+        <button role="tab" type="button" data-tab="products" aria-selected="true">Products</button>
+        <button role="tab" type="button" data-tab="categories" aria-selected="false">Categories</button>
+        <button role="tab" type="button" data-tab="quotes" aria-selected="false">Quote requests <span class="pill" id="quoteCount">0</span></button>
+        <button role="tab" type="button" data-tab="data" aria-selected="false">Backup</button>
+      </div>
+
+      <div class="tab-panel" data-panel="products">
+        <div class="manage-tools">
+          <input type="search" id="manageSearch" placeholder="Filter products…" />
+          <button class="btn btn-primary" type="button" id="addProduct">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg> Add product
+          </button>
+        </div>
+        <div class="table-wrap"><table class="table" id="productTable"></table></div>
+      </div>
+
+      <div class="tab-panel" data-panel="categories" hidden>
+        <form class="cat-form" id="catForm">
+          <input name="name" placeholder="New category name" required maxlength="40" />
+          <input name="color" type="color" value="#0f766e" aria-label="Category colour" />
+          <button class="btn btn-primary" type="submit">Add</button>
+        </form>
+        <ul class="cat-list" id="catList"></ul>
+      </div>
+
+      <div class="tab-panel" data-panel="quotes" hidden>
+        <div id="quoteList"></div>
+      </div>
+
+      <div class="tab-panel" data-panel="data" hidden>
+        <div class="data-grid">
+          <div class="data-card">
+            <h3>Export</h3>
+            <p class="muted">Download the catalogue, categories and quotes as a JSON file you can keep or move to another computer.</p>
+            <button class="btn btn-soft" type="button" id="exportBtn">Download backup</button>
+          </div>
+          <div class="data-card">
+            <h3>Import</h3>
+            <p class="muted">Load a backup file. This replaces the current catalogue.</p>
+            <label class="btn btn-soft file-btn">Choose file<input type="file" id="importFile" accept="application/json,.json" hidden /></label>
+          </div>
+          <div class="data-card danger">
+            <h3>Reset</h3>
+            <p class="muted">Restore the original catalogue. Your cart and saved items are cleared too.</p>
+            <button class="btn btn-danger" type="button" id="resetBtn">Reset everything</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Product editor -->
+  <dialog class="modal" id="editModal" aria-labelledby="editTitle">
+    <form class="modal-body edit-form" id="editForm" method="dialog" novalidate>
+      <div class="manage-head">
+        <h2 id="editTitle">Edit product</h2>
+        <button class="icon-btn" type="button" data-close aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      </div>
+      <div class="edit-layout">
+        <div class="edit-preview">
+          <div class="preview-art" id="previewArt"></div>
+          <label class="btn btn-soft file-btn small">Upload photo<input type="file" name="imageFile" accept="image/*" hidden /></label>
+          <button class="btn btn-ghost small" type="button" id="clearImage" hidden>Use illustration</button>
+          <div class="icon-picker" id="iconPicker" role="radiogroup" aria-label="Illustration"></div>
+        </div>
+        <div class="fields">
+          <label class="field span-2">Name<input name="name" required maxlength="80" /></label>
+          <label class="field">SKU<input name="sku" maxlength="30" /></label>
+          <label class="field">Category<select name="category"></select></label>
+          <label class="field">Price ($)<input name="price" type="number" step="0.01" min="0" required /></label>
+          <label class="field">Was price ($)<input name="oldPrice" type="number" step="0.01" min="0" placeholder="optional" /></label>
+          <label class="field">Unit<input name="unit" placeholder="e.g. box of 100" maxlength="30" /></label>
+          <label class="field">Stock<input name="stock" type="number" step="1" min="0" required /></label>
+          <label class="field">Rating (0–5)<input name="rating" type="number" step="0.1" min="0" max="5" /></label>
+          <label class="field">Badge<input name="badge" placeholder="New, Sale…" maxlength="16" /></label>
+          <label class="field span-2">Description<textarea name="description" rows="3" maxlength="600"></textarea></label>
+          <div class="field span-2">
+            <span>Specifications</span>
+            <div class="spec-rows" id="specRows"></div>
+            <button class="btn btn-ghost small" type="button" id="addSpec">+ Add specification</button>
+          </div>
+        </div>
+      </div>
+      <div class="form-foot">
+        <button class="btn btn-ghost" type="button" data-close>Cancel</button>
+        <button class="btn btn-primary" type="submit">Save product</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Quote form -->
+  <dialog class="modal" id="quoteModal" aria-labelledby="quoteTitle">
+    <form class="modal-body" id="quoteForm" novalidate>
+      <div class="manage-head">
+        <div>
+          <h2 id="quoteTitle">Request a quote</h2>
+          <p class="muted" id="quoteSummary">Tell us what you need and we'll reply within one business day.</p>
+        </div>
+        <button class="icon-btn" type="button" data-close aria-label="Close"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      </div>
+      <div class="fields">
+        <label class="field">Full name<input name="name" required autocomplete="name" /></label>
+        <label class="field">Organisation<input name="org" autocomplete="organization" /></label>
+        <label class="field">Email<input name="email" type="email" required autocomplete="email" /></label>
+        <label class="field">Phone<input name="phone" type="tel" autocomplete="tel" /></label>
+        <label class="field span-2">Notes<textarea name="notes" rows="3" placeholder="Delivery schedule, sizes, certificates needed…"></textarea></label>
+      </div>
+      <div class="form-foot">
+        <button class="btn btn-ghost" type="button" data-close>Cancel</button>
+        <button class="btn btn-primary" type="submit">Send request</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/icons.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
